@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Shaint</string>
+    <string name="main">Главная</string>
+    <string name="popular_text">Часто выбирают</string>
+    <string name="your_popular_text">Вы недавно смотрели</string>
+    <string name="to_cart">В корзину</string>
+    <string name="search_products">Поиск продуктов</string>
+</resources>

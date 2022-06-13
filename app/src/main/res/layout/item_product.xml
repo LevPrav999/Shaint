@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:padding="8dp">
+
+    <ImageView
+        android:id="@+id/movieImageIv"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:scaleType="center"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="ContentDescription"
+        tools:src="@drawable/non_image" />
+
+    <FrameLayout
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:background="@drawable/title_lining"
+        app:layout_constraintBottom_toBottomOf="@id/movieImageIv"
+        app:layout_constraintEnd_toEndOf="@id/movieImageIv"
+        app:layout_constraintStart_toStartOf="@id/movieImageIv">
+
+        <TextView
+            android:id="@+id/movieTitleIv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginHorizontal="4dp"
+            android:ellipsize="end"
+            android:gravity="center"
+            android:maxLines="2"
+            android:textColor="@color/white"
+            android:textSize="17sp"
+            tools:ignore="SmallSp"
+            tools:text="Test test test test test" />
+    </FrameLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

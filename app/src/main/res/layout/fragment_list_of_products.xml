@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#1F1E24"
+    tools:context="ui.listproducts.view.ListOfProductsFragment">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="43dp"
+        android:background="@color/cardview_dark_background"
+        app:layout_constraintBottom_toTopOf="@+id/popularText"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:title="@string/main"
+        app:titleTextColor="@color/white" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/popularRecycler"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="40dp"
+        android:background="#272630"
+        android:scrollbars="horizontal"
+        app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+        app:layout_constraintBottom_toTopOf="@+id/yourPopularText"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/popularText"
+        app:spanCount="2"
+        tools:listitem="@layout/item_product" />
+
+    <TextView
+        android:id="@+id/popularText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginBottom="21dp"
+        android:text="@string/popular_text"
+        android:textAlignment="center"
+        android:textColor="#888697"
+        android:textSize="@dimen/text_margin_2"
+        app:layout_constraintBottom_toTopOf="@+id/popularRecycler"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/yourPopularRecycler"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="87dp"
+        android:background="#272630"
+        android:scrollbars="horizontal"
+        app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+        app:layout_constraintBottom_toTopOf="@+id/toCart"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/yourPopularText"
+        app:spanCount="2"
+        tools:listitem="@layout/item_product" />
+
+    <TextView
+        android:id="@+id/yourPopularText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginBottom="10dp"
+        android:text="@string/your_popular_text"
+        android:textAlignment="center"
+        android:textColor="#888697"
+        android:textSize="@dimen/text_margin_2"
+        app:layout_constraintBottom_toTopOf="@+id/yourPopularRecycler"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/popularRecycler" />
+
+    <ImageButton
+        android:id="@+id/toCart"
+        android:layout_width="58dp"
+        android:layout_height="59dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="35dp"
+        android:src="@drawable/ic_baseline_shopping_basket_24"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/yourPopularRecycler"
+        android:contentDescription="@string/to_cart" />
+
+    <ImageButton
+        android:id="@+id/search_products"
+        android:layout_width="58dp"
+        android:layout_height="59dp"
+        android:layout_marginEnd="336dp"
+        android:layout_marginBottom="35dp"
+        android:src="@drawable/ic_baseline_search_24"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/yourPopularRecycler"
+        app:layout_constraintVertical_bias="1.0"
+        android:contentDescription="@string/search_products" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
