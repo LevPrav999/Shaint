@@ -1,10 +1,9 @@
-package ru.levprav.shaint.ui.listproducts.presenter;
+package ru.levprav.shaint.ui.listproducts.presenter
 
-import ru.levprav.shaint.base.MvpPresenter;
-import ru.levprav.shaint.ui.listproducts.view.ListProductsView;
+import ru.levprav.shaint.base.MvpPresenter
+import ru.levprav.shaint.ui.listproducts.view.ListProductsView
 
-public interface ListProductsPresenter extends MvpPresenter<ListProductsView> {
-
-    void fetchPopularProducts();
-    void fetchYourPopularProducts();
+interface ListProductsPresenter : MvpPresenter<ListProductsView> {
+    fun fetchPopularProducts()
+    fun fetchYourPopularProducts()
 }

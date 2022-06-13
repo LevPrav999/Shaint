@@ -1,33 +1,16 @@
-package ru.levprav.shaint.ui.listproducts.presenter;
+package ru.levprav.shaint.ui.listproducts.presenter
 
-import androidx.annotation.NonNull;
+import ru.levprav.shaint.ui.listproducts.presenter.ListProductsPresenter
+import ru.levprav.shaint.ui.listproducts.view.ListProductsView
 
-import ru.levprav.shaint.ui.listproducts.view.ListProductsView;
-
-public class ListProductsPresenterImpl implements ListProductsPresenter{
-    @Override
-    public void viewIsReady() {
-        fetchPopularProducts();
-        fetchYourPopularProducts();
+class ListProductsPresenterImpl : ListProductsPresenter {
+    override fun viewIsReady() {
+        fetchPopularProducts()
+        fetchYourPopularProducts()
     }
 
-    @Override
-    public void onAttachView(@NonNull ListProductsView view) {
-
-    }
-
-    @Override
-    public void onDetachView() {
-
-    }
-
-    @Override
-    public void fetchPopularProducts() {
-
-    }
-
-    @Override
-    public void fetchYourPopularProducts() {
-
-    }
+    override fun onAttachView(view: ListProductsView) {}
+    override fun onDetachView() {}
+    override fun fetchPopularProducts() {}
+    override fun fetchYourPopularProducts() {}
 }

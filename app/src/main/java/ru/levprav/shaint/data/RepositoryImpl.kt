@@ -30,7 +30,7 @@ class RepositoryImpl(
                     override fun onLoadSuccess(response: ProductsResponseDTO) {
                         val products = response.let { productsResponse ->
                             Log.e("Test", "PRODUCTS: ${productsResponse}")
-                            productsResponse.products.map { movieDTO ->
+                            productsResponse.products?.map { movieDTO ->
                                 movieDTO.toUI()
                             }
                         }
@@ -42,7 +42,9 @@ class RepositoryImpl(
 
 
                         productDao.insertAllProducts(moviesEntity)
-                        onLoadListener.onLoadSuccess(products)
+                        if (products != null) {
+                            onLoadListener.onLoadSuccess(products)
+                        }
                     }
 
                     override fun onLoadFailure(errorMsg: String) {

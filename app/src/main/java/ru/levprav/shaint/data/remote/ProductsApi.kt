@@ -1,10 +1,10 @@
-package ru.levprav.shaint.data.remote;
+package ru.levprav.shaint.data.remote
 
-import retrofit2.Call;
-import retrofit2.http.GET;
-import ru.levprav.shaint.data.remote.model.ProductsResponseDTO;
+import retrofit2.Call
+import retrofit2.http.GET
+import ru.levprav.shaint.data.remote.model.ProductsResponseDTO
 
-public interface ProductsApi {
+interface ProductsApi {
     @GET("products.json")
-    Call<ProductsResponseDTO> fetchProducts();
+    fun fetchProducts(): Call<ProductsResponseDTO>
 }

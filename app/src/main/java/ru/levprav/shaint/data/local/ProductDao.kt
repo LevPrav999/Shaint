@@ -1,26 +1,21 @@
-package ru.levprav.shaint.data.local;
+package ru.levprav.shaint.data.local
 
-import androidx.room.Dao;
-import androidx.room.Insert;
-import androidx.room.Query;
-
-import java.util.List;
-
-import ru.levprav.shaint.data.local.model.ProductEntity;
+import androidx.room.Dao
+import androidx.room.Insert
+import androidx.room.Query
+import ru.levprav.shaint.data.local.model.ProductEntity
 
 @Dao
-public interface ProductDao {
-
-    @Query("SELECT * FROM products")
-    List<ProductEntity> getAllProducts();
+interface ProductDao {
+    @get:Query("SELECT * FROM products")
+    val allProducts: List<ProductEntity>
 
     @Query("SELECT * FROM products WHERE id = :id")
-    ProductEntity getProductById(int id);
+    fun getProductById(id: Int): ProductEntity
 
     @Query("SELECT * FROM products WHERE categories LIKE '%' || :category || '%'")
-    List<ProductEntity> getProductsByCategory(String category);
+    fun getProductsByCategory(category: String?): List<ProductEntity>
 
     @Insert
-    void insertAllProducts(List<ProductEntity> products);
-
+    fun insertAllProducts(products: List<ProductEntity>)
 }

@@ -1,18 +1,11 @@
-package ru.levprav.shaint.domain;
+package ru.levprav.shaint.domain
 
+import ru.levprav.shaint.data.remote.OnLoadListener
+import ru.levprav.shaint.domain.model.Product
 
-import java.util.List;
-
-import ru.levprav.shaint.data.remote.OnLoadListener;
-import ru.levprav.shaint.domain.model.Product;
-
-public interface Repository {
-
-    void getAllProducts(OnLoadListener<List<Product>> onLoadListener);
-
-    Product getProductById(int id);
-
-    List<Product> getProductsByCategory(String category);
-
-    List<String> getCategories();
+interface Repository {
+    fun getAllProducts(onLoadListener: OnLoadListener<List<Product>>)
+    fun getProductById(id: Int): Product
+    fun getProductsByCategory(category: String): List<Product>
+    fun getCategories(): List<String>
 }
