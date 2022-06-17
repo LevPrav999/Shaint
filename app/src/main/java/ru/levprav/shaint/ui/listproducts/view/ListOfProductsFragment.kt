@@ -20,5 +20,7 @@ internal class ListOfProductsFragment : Fragment(), ListProductsView {
         super.onViewCreated(view, savedInstanceState)
     }
 
-    override fun showProducts(products: List<Product>) {}
+    override fun showProducts(products: List<Product?>?) {
+
+    }
 }
