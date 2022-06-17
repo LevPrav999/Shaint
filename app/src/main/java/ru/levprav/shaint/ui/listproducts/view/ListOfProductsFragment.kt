@@ -9,7 +9,7 @@ import androidx.fragment.app.Fragment
 import ru.levprav.shaint.R
 import ru.levprav.shaint.domain.model.Product
 
-internal class ListOfProductsFragment : Fragment(), ListProductsView {
+class ListOfProductsFragment : Fragment(), ListProductsView {
     override fun onCreateView(inflater: LayoutInflater,
                               container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
