@@ -13,4 +13,6 @@ data class ProductDTO(
         val categories:ArrayList<String>,
         @SerializedName("imageUrl")
         val imageUrl: String,
+        @SerializedName("type")
+        val type: String,
 )

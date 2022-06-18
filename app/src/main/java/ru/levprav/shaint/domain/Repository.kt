@@ -8,4 +8,6 @@ interface Repository {
     fun getProductById(id: Int): Product
     fun getProductsByCategory(category: String): List<Product>
     fun getCategories(): List<String>
+
+    fun getYourPopularProducts(): List<Product>
 }

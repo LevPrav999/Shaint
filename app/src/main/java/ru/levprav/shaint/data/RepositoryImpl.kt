@@ -16,13 +16,13 @@ class RepositoryImpl(
 ) : Repository {
 
     override fun getAllProducts(onLoadListener: OnLoadListener<List<Product>>) {
-        val movies = productDao.allProducts.let { list ->
+        val products = productDao.allProducts.let { list ->
             list.map { movieEntity ->
                 movieEntity.toUI()
             }
         }
 
-        movies.let {
+        products.let {
             if (it.isNotEmpty()) {
                 onLoadListener.onLoadSuccess(it)
             } else {
@@ -35,13 +35,15 @@ class RepositoryImpl(
                             }
                         }
 
-                        val moviesEntity = movies
-                                .map { movie ->
-                                    movie.toEntity()
-                                }
+                        val moviesEntity = products
+                            ?.map { movie ->
+                                movie.toEntity()
+                            }
 
 
-                        productDao.insertAllProducts(moviesEntity)
+                        if (moviesEntity != null) {
+                            productDao.insertAllProducts(moviesEntity)
+                        }
                         if (products != null) {
                             onLoadListener.onLoadSuccess(products)
                         }
@@ -56,7 +58,7 @@ class RepositoryImpl(
     }
 
     override fun getProductById(id: Int) =
-            productDao.getProductById(id).toUI()
+        productDao.getProductById(id).toUI()
 
     override fun getProductsByCategory(category: String): List<Product> {
         return productDao.getProductsByCategory(category).map {
@@ -76,6 +78,17 @@ class RepositoryImpl(
 
         return ArrayList(genres)
     }
+
+    override fun getYourPopularProducts(): List<Product> {
+        val products = productDao.yourPopularProducts.let { list ->
+            list.map { movieEntity ->
+                movieEntity.type = "your"
+                movieEntity.toUI()
+            }
+        }
+
+        return products
+    }
 }
 
 private fun ProductEntity.toUI() = Product(
@@ -83,8 +96,9 @@ private fun ProductEntity.toUI() = Product(
         name = this.name,
         details = this.details,
         imageUri = this.imageUri,
-        categories = this.categories
-)
+        categories = this.categories,
+        type = this.type
+    )
 
 private fun ProductDTO.toUI() =
         Product(
@@ -93,6 +107,7 @@ private fun ProductDTO.toUI() =
                 this.details,
                 this.imageUrl,
                 this.categories,
+                this.type,
         )
 
 private fun Product.toEntity() = ProductEntity(
@@ -101,4 +116,5 @@ private fun Product.toEntity() = ProductEntity(
         this.details,
         this.imageUri,
         this.categories,
+        this.type,
 )

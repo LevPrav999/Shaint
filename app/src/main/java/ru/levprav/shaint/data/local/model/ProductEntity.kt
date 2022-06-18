@@ -10,5 +10,6 @@ data class ProductEntity(
         val name: String?,
         val details: String?,
         val imageUri: String?,
-        val categories: List<String>
+        val categories: List<String>,
+        var type: String
 )

@@ -6,10 +6,15 @@ import android.view.ViewGroup
 import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.Fragment
+import org.koin.android.ext.android.inject
 import ru.levprav.shaint.R
 import ru.levprav.shaint.domain.model.Product
+import ru.levprav.shaint.ui.listproducts.presenter.ListProductsPresenter
+import ru.levprav.shaint.ui.listproducts.view.adapter.RecyclerViewItem
 
 class ListOfProductsFragment : Fragment(), ListProductsView {
+    private val presenter: ListProductsPresenter by inject()
+
     override fun onCreateView(inflater: LayoutInflater,
                               container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
@@ -17,10 +22,15 @@ class ListOfProductsFragment : Fragment(), ListProductsView {
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
+        presenter.onAttachView(this)
     }
 
-    override fun showProducts(products: List<Product?>?) {
+
+    override fun showPopularProducts(products: List<RecyclerViewItem>) {
+
+    }
+
+    override fun showYourProducts(products: List<RecyclerViewItem>) {
 
     }
 }

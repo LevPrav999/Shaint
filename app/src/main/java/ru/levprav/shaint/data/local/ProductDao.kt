@@ -18,4 +18,11 @@ interface ProductDao {
 
     @Insert
     fun insertAllProducts(products: List<ProductEntity>)
+
+    @Insert
+    fun insertYourPopularProducts(products: List<ProductEntity>)
+
+    @get:Query("SELECT * FROM products WHERE type = `your`")
+    val yourPopularProducts: List<ProductEntity>
+
 }
