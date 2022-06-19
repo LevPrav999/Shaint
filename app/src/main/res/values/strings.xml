@@ -5,4 +5,6 @@
     <string name="your_popular_text">Вы недавно смотрели</string>
     <string name="to_cart">В корзину</string>
     <string name="search_products">Поиск продуктов</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
