@@ -1,20 +1,16 @@
 package ru.levprav.shaint.ui.listproducts.view
 
-import ru.levprav.shaint.ui.listproducts.view.ListProductsView
-import android.view.LayoutInflater
-import android.view.ViewGroup
 import android.os.Bundle
-import android.text.Layout
 import android.util.Log
+import android.view.LayoutInflater
 import android.view.View
+import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.ListFragment
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
 import org.koin.android.ext.android.inject
 import ru.levprav.shaint.R
 import ru.levprav.shaint.databinding.FragmentListOfProductsBinding
-import ru.levprav.shaint.domain.model.Product
 import ru.levprav.shaint.ui.listproducts.presenter.ListProductsPresenter
 import ru.levprav.shaint.ui.listproducts.view.adapter.ProductsRecyclerViewAdapter
 import ru.levprav.shaint.ui.listproducts.view.adapter.RecyclerViewItem

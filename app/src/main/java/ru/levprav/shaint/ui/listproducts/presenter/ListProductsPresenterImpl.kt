@@ -1,11 +1,9 @@
 package ru.levprav.shaint.ui.listproducts.presenter
 
-import android.util.Log
 import ru.levprav.shaint.base.BasePresenter
 import ru.levprav.shaint.data.remote.OnLoadListener
 import ru.levprav.shaint.domain.Repository
 import ru.levprav.shaint.domain.model.Product
-import ru.levprav.shaint.ui.listproducts.presenter.ListProductsPresenter
 import ru.levprav.shaint.ui.listproducts.view.ListProductsView
 import ru.levprav.shaint.ui.listproducts.view.adapter.RecyclerViewItem
 

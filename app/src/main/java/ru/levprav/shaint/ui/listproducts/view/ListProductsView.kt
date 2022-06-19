@@ -1,7 +1,6 @@
 package ru.levprav.shaint.ui.listproducts.view
 
 import ru.levprav.shaint.base.BaseView
-import ru.levprav.shaint.domain.model.Product
 import ru.levprav.shaint.ui.listproducts.view.adapter.RecyclerViewItem
 
 interface ListProductsView : BaseView {
