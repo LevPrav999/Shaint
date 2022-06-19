@@ -34,6 +34,10 @@ class ListProductsPresenterImpl(
         showProducts(repository.getYourPopularProducts())
     }
 
+    override fun getProductsByCategory(category: String) {
+        showProducts(repository.getProductsByCategory(category))
+    }
+
 
     private fun showProducts(movies: List<Product>) {
         val recyclerViewItems = mutableListOf<RecyclerViewItem>()
@@ -45,7 +49,7 @@ class ListProductsPresenterImpl(
         recyclerViewItems.addAll(movies.map {
             it.toRecyclerViewItem()
         })
-        view?.showProducts(recyclerViewItems)
+        view?.showPopularProducts(recyclerViewItems)
     }
 
     private fun String.toRecyclerViewItem() = RecyclerViewItem.Category(
